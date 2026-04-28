@@ -1,0 +1,11 @@
+services:
+  latex-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/latex/src
+      - ./build:/latex/build
+    working_dir: /latex/src
+    command: >
+      -pdf -interaction=nonstopmode -output-directory=/latex/build -pvc main.tex
