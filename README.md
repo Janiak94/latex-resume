@@ -1,6 +1,6 @@
 # Resume source
 
-Latex source code for my resume.
+[Latex source code for my resume.](./resume.pdf)
 
 ## Requirements
 
