@@ -1,5 +1,5 @@
 FROM blang/latex:ctanfull
 
-WORKDIR /latex
+WORKDIR /latex/src
 
 ENTRYPOINT [ "latexmk" ]

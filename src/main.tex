@@ -1,17 +1,210 @@
-\documentclass{article}
+% a mashup of hipstercv, friggeri and twenty cv
+% https://www.latextemplates.com/template/twenty-seconds-resumecv
+% https://www.latextemplates.com/template/friggeri-resume-cv
 
-\title{My First Document}
-\author{Your Name}
-\date{\today}
+\documentclass[lighthipster]{simplehipstercv}
+% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
+% withoutsidebar
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[margin=1cm, a4paper]{geometry}
 
+
+%------------------------------------------------------------------ Variablen
+
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.23\textwidth}
+\setlength{\rightcolwidth}{0.75\textwidth}
+
+%------------------------------------------------------------------
+\title{New Simple CV}
+\author{\LaTeX{} Ninja}
+\date{June 2019}
+
+\pagestyle{empty}
 \begin{document}
 
-\maketitle
 
-\section{Introduction}
+\thispagestyle{empty}
+%-------------------------------------------------------------
 
-Hello, world! This is my first LaTeX document.
+\section*{Start}
 
-\input{resources.tex}
+\simpleheader{headercolour}{Jens}{Nilsson}{Techincal Developer}{white}
+
+
+
+%------------------------------------------------
+
+% this has to be here so the paracols starts..
+\subsection*{}
+\vspace{4em}
+
+\setlength{\columnsep}{1.5cm}
+\columnratio{0.23}[0.75]
+\begin{paracol}{2}
+\hbadness5000
+%\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
+
+\paracolbackgroundoptions
+
+% 0.9,0.9,0.9 -- 0.8,0.8,0.8
+
+
+\footnotesize
+{\setasidefontcolour
+\flushright
+\begin{center}
+    \roundpic{assets/me.png}
+\end{center}
+
+\bg{cvgreen}{white}{About me}\\[0.5em]
+
+{\footnotesize
+I am am originally from the south of Sweden (a skåning) who, after studying
+music in high-school decided that I wanted to fulfill my dream of studying physics,
+moved up to Gothenburg! I am an active person who thrives when working tightly
+in a team and when I get the chance to learn something new and useful.}
+\bigskip
+
+% \bg{cvgreen}{white}{personal} \\[0.5em]
+% Jack Sparrow
+
+% nationality: English 
+
+% 1690
+
+% \bigskip
+
+\bg{cvgreen}{white}{Areas of specialization} \\[0.5em]
+
+Machine Learning ~•~ Data Science ~•~ Data Analysis ~•~ Optimization
+
+% \bigskip
+
+
+
+\bigskip
+
+\bg{cvgreen}{white}{Interests}\\[0.5em]
+
+Running ~•~ Music ~•~ Skateboarding ~•~ Snowboarding ~•~ Traveling
+
+% \bigskip
+
+% \bg{cvgreen}{white}{Interests}\\[0.5em]
+
+% \texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+
+% \texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+
+% \texttt{R} ~/~ \texttt{Android} ~/~ \texttt{Linux}
+
+\vspace{2em}
+
+\infobubble{\faAt}{cvgreen}{white}{jensnilsson94@hotmail.com}
+% \infobubble{\faTwitter}{cvgreen}{white}{@sparrow}
+% \infobubble{\faFacebook}{cvgreen}{white}{Jack Sparrow}
+\infobubble{\faGithub}{cvgreen}{white}{janiak94}
+
+\phantom{turn the page}
+
+\phantom{turn the page}
+}
+%-----------------------------------------------------------
+\switchcolumn
+
+\small
+\section*{Work}
+
+\begin{tabular}{r| p{0.5\textwidth} c}
+    % Smarteye
+    \cvevent{2022-present}{Smart Eye}{Techincal Developer}{Gothenburg \color{cvred}}
+    {Currently on the Core team, developing DMS related core features. In the role I get to work with the entire feature development pipeline, from data collection, data analysis, ML development, and implementing the feature for embedded systems. I also worked on a project team where we had direct contact with our customer and provided support for specific issues.}{assets/smarteye.png} \\
+    
+    % Smarteye - Thesis
+    \cvevent{2022}{Smart Eye}{Master Thesis}{Gothenburg \color{cvred}}{Unsupervised learning methods for Face Antispoofing (FAS).}{assets/smarteye.png} \\
+
+    % Ericsson
+    \cvevent{2016--2017}{Ericsson}{Summer Internship}{Gothenburg \color{cvred}}{Worked in the FPGA/Mini-Link department where I created tools and scripts to help the department.}{assets/ericsson.png} \\
+
+    % Korv
+    \cvevent{2017-2019}{Gothia Events}{Salesperson}{Gothenburg \color{cvred}}{Selling hot dogs and beer at Bravida Arena when BK Häcken played!}{assets/sausage.png} \\
+
+    % Summer studies
+    \cvevent{2018}{Chalmers}{Summer Studies}{Gothenburg \color{cvred}}{Granted a scholarship for continued research on our bachelor thesis related to the use of Software Defined Radio (SDR) for medical measurements.}{assets/chalmers.png} \\
+\end{tabular}
+\vspace{1em}
+
+\begin{minipage}[t]{0.35\textwidth}
+\section*{Education}
+\begin{tabular}{r p{0.6\textwidth} c}
+    \cvdegree{2018-2022}{Complex Adaptive Systems}{MSc}{Chalmers \color{headerblue}}{Focus on ML and data science.}{assets/chalmers.png} \\
+    \cvdegree{2015-2022}{Engineering Physics}{BSc}{Chalmers \color{headerblue}}{}{assets/chalmers.png} \\
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Programming}
+\begin{tabular}{r @{\hspace{0.5em}}l}
+     \bg{skilllabelcolour}{iconcolour}{python} &  \barrule{0.45}{0.5em}{cvpurple}\\
+     \bg{skilllabelcolour}{iconcolour}{c, c++} & \barrule{0.3}{0.5em}{cvpurple} \\
+     \bg{skilllabelcolour}{iconcolour}{bash, matlab} & \barrule{0.2}{0.5em}{cvpurple} \\
+     \bg{skilllabelcolour}{iconcolour}{rust, javascript} & \barrule{0.1}{0.5em}{cvpurple} \\
+\end{tabular}
+\end{minipage}
+
+\section*{Merits}
+\begin{tabular}{r| p{0.5\textwidth} c}
+    \cvevent{2018-2019}{3DTeamet}{Course Administrator}{Gothenburg \color{cvred}}{Administered and held courses for 3D printers and laser cutters for Physics students at Chalmers.}{assets/3dteamet.png} \\
+    \cvevent{2021-2022}{Intize}{Mathematics Mentor}{Gothenburg \color{cvred}}{Mathematics mentor for high school students in Gothenburg.}{assets/intize.png} \\
+\end{tabular}
+\vspace{1em}
+
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Languages}
+\begin{tabular}{l | ll}
+\textbf{Swedish} & {\phantom{x}\footnotesize mother tongue} \\
+\textbf{English} & \pictofraction{\faCircle}{cvgreen}{4}{white!30}{1}{\tiny} \\
+% \textbf{Polish} & C2 & \pictofraction{\faCircle}{cvgreen}{1}{black!30}{3}{\tiny} \\
+\end{tabular}
+\bigskip
+% \section*{Certificates \& Grants}
+% \begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
+%     1708 & Captain's Certificates \\
+%     1710 & Travel grant \\
+%     1715--1716 & Grant from the Pirate's Company
+% \end{tabular}
+% \bigskip
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\textwidth}
+\section*{Additional competences}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.6\textwidth}}
+    Development & Git | GitLab | TensorFlow | Docker | Jenkins | YouTrack | Poetry | Unix \\
+    Other & Drivers License
+\end{tabular}
+\end{minipage}
+
+\section*{References}
+Left upon request.
+
+
+\vfill{} % Whitespace before final footer
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\rightcolwidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\small Jens Nilsson \icon{\faEnvelopeO}{cvgreen}{} Mölndal \icon{\faMapMarker}{cvgreen}{} Sweden \icon{\faPhone}{cvgreen}{} +46721733677
+\newline
+\icon{\faAt}{cvgreen}{} \protect\url{jensnilsson94@hotmail.com}
+}
+\end{center}
+\end{minipage}
+
+\end{paracol}
 
 \end{document}

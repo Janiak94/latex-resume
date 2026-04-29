@@ -8,4 +8,5 @@ services:
       - ./build:/latex/build
     working_dir: /latex/src
     command: >
-      -pdf -interaction=nonstopmode -output-directory=/latex/build -pvc main.tex
+      -cd -pdf -interaction=nonstopmode -output-directory=/latex/build -pvc
+      main.tex
